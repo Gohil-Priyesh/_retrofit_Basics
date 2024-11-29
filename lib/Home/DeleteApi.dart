@@ -27,6 +27,7 @@ class _DeleteApiState extends State<DeleteApi> {
                   setState(() {
                     _isLoading = true;
                   });
+                  /// this id is given static hear
                   restClient.DeleteApiExp('2').then((value){
                     logger.i('id deletion successful');
                     setState(() {

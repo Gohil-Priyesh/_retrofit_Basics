@@ -38,6 +38,7 @@ dependencies:
   retrofit:
   dio: ^5.7.0
   image_picker: ^0.8.8
+  json_annotation: ^4.9.0
 
 
 
@@ -54,6 +55,7 @@ dev_dependencies:
   retrofit_generator:
   build_runner:
   logger: ^2.5.0
+  json_serializable: ^6.9.0
 
 
 # For information on the generic Dart part of this file, see the

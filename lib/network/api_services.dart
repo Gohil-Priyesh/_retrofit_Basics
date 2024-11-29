@@ -3,6 +3,7 @@ import 'package:dio/dio.dart' hide Headers;
 import 'package:flutter/cupertino.dart';
 import 'package:retrofit/http.dart';
 import 'package:retrofit/retrofit.dart';
+import 'package:retrofit_basic_exp/json_serializable/postExampleWithSerializabel.dart';
 import 'package:retrofit_basic_exp/models/getModel/listApiExampleModel.dart';
 import 'package:retrofit_basic_exp/models/getModel/user_list_res_model.dart';
 import 'package:retrofit_basic_exp/models/postModel/SingleUserPostModel.dart';
@@ -28,8 +29,9 @@ abstract class RestClient {
 
 
   /// post api wit field example
+  /// the model is taken from json_serializable
   @POST('https://reqres.in/api/users')
-  Future<SingleUserPostModel> postApiExp(
+  Future<Postexamplewithserializabel> postApiExp(
       /// this field are similar to constructor which ask for a value when called
       /// pass the same key as given in the map
       @Field("name") String name,

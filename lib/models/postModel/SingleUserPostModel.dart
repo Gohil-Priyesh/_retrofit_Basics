@@ -5,8 +5,8 @@ class SingleUserPostModel {
   SingleUserPostModel({this.id, this.createdAt});
 
   SingleUserPostModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    createdAt = json['createdAt'];
+    id = json['id'] as String;
+    createdAt = json['createdAt'] as String;
   }
 
   Map<String, dynamic> toJson() {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:retrofit_basic_exp/Home/PutApi.dart';
+import 'package:retrofit_basic_exp/json_serializable/postExampleWithSerializabel.dart';
 import 'package:retrofit_basic_exp/main.dart';
 import 'package:retrofit_basic_exp/models/postModel/SingleUserPostModel.dart';
 import 'package:retrofit_basic_exp/network/injection.dart';
@@ -16,7 +17,10 @@ class _PostapiState extends State<Postapi> {
   bool _isLoading = false;
 
   /// post api Example with model
+  /// model made from json to dart
   SingleUserPostModel singelUserPostApiObj = SingleUserPostModel();// object
+  /// model made from json_serializable
+  Postexamplewithserializabel postexamplewithserializabel = Postexamplewithserializabel();
   TextEditingController NameController = TextEditingController();
   TextEditingController JobController = TextEditingController();
 
@@ -24,8 +28,9 @@ class _PostapiState extends State<Postapi> {
     restClient.postApiExp(NameController.text.toString(), JobController.text.toString()).then((value){
       setState(() {
         _isLoading = false;
-        singelUserPostApiObj = value;
-        logger.i(value.id);
+        postexamplewithserializabel = value;
+        logger.i(postexamplewithserializabel.createdAt);
+        logger.i(postexamplewithserializabel.id);
       });
     }).onError((error,stackTrace){
       logger.e(error.toString());
