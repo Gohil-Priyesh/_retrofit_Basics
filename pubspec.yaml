@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   retrofit:
   dio: ^5.7.0
+  image_picker: ^0.8.8
 
 
 

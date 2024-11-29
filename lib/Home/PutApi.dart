@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:retrofit/http.dart';
+import 'package:retrofit_basic_exp/Home/multiPartApi.dart';
 import 'package:retrofit_basic_exp/main.dart';
 import 'package:retrofit_basic_exp/models/putModel/putApiModel.dart';
 import 'package:retrofit_basic_exp/network/injection.dart';
@@ -32,14 +34,14 @@ class _PutapiState extends State<Putapi> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Putapi(),));
+        Navigator.push(context, MaterialPageRoute(builder: (context) =>Multipartapi(),));
       },
         child: Icon(Icons.arrow_forward),
       ),
       appBar: AppBar(
         backgroundColor: Colors.cyan,
         title: Text(
-          "Post Api Example",
+          "put Api Example",
         ),
       ),
       body: Center(

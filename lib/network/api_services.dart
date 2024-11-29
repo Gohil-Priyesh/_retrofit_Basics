@@ -1,5 +1,6 @@
-
-import 'package:dio/dio.dart';
+import 'dart:io';
+import 'package:dio/dio.dart' hide Headers;
+import 'package:flutter/cupertino.dart';
 import 'package:retrofit/http.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:retrofit_basic_exp/models/getModel/listApiExampleModel.dart';
@@ -44,8 +45,7 @@ abstract class RestClient {
       @Field( "job") String job,
       );
 
-
-  /// @PUT('https://reqres.in/api/users/{id}')
+/// @PUT('https://reqres.in/api/users/{id}')
 //   Future<PutApiModel> PutApiExp(
 //       @Path('id') String id,
 //       @Field("name") String name,
@@ -57,6 +57,24 @@ abstract class RestClient {
 // PATCH
 // Modifies a portion of an existing resource, leaving other aspects of it unmodified. This means that only the fields that need to be changed are sent in the request body.
 // PATCH is less invasive than PUT because it only updates individual fields, whereas PUT replaces the resource completely.
+
+
+  /// MultiPart Api
+  @POST('https://fakestoreapi.com/products')
+  @MultiPart()
+  @Headers(<String, dynamic>{
+    'Content-Type': 'multipart/form-data',
+  })
+  Future<dynamic> MuptiPartExp(
+      /// this field are similar to constructor which ask for a value when called
+      /// pass the same key as given in the map
+      @Part(name: 'file') File file
+      );
+
+  @DELETE('https://reqres.in/api/users/{id}')
+  Future<dynamic> DeleteApiExp(
+      @Path('id') String id,
+      );
 
   /// for passing data in the post api in the url
   //@POST('/api/users/2/{id}')
